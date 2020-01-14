@@ -1,3 +1,5 @@
+import 'package:demo_flutter/webrtc/BasicSample.dart';
+import 'package:demo_flutter/widgets/Menu.dart';
 import 'package:demo_flutter/widgets/Tabs.dart';
 import 'package:demo_flutter/widgets/TabFour.dart';
 import 'package:demo_flutter/widgets/TabOne.dart';
@@ -17,6 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+//      home: MyHomePage(title: 'Schenker App'),
       home: MyHomePage(title: 'Schenker App'),
       routes: {
 //        '/second': (context) => FirstScreen(),
@@ -36,7 +39,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
-  final List<Widget> _children = [TabOne(), TabTwo(), TabThree(), TabFour()];
+  final List<Widget> _children = [TabOne(), TabTwo(), TabThree(), TabFour(), BasicSample()];
 
   void onTabTapped(int index) {
     setState(() {
@@ -47,11 +50,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: _children[_currentIndex],
-      bottomNavigationBar: tabs(onTabTapped, _currentIndex)
-    );
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+//        appBar: GuillotineMenu(),
+        body: _children[_currentIndex],
+        bottomNavigationBar: tabs(onTabTapped, _currentIndex));
   }
 }

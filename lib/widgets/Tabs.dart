@@ -24,6 +24,8 @@ var tabs = (onTabTapped,_currentIndex) =>  BottomNavigationBar(
     new BottomNavigationBarItem(
         icon: Icon(Icons.person), title: Text('Profile')),
     new BottomNavigationBarItem(
-        icon: Icon(Icons.battery_full), title: Text('Grid'))
+        icon: Icon(Icons.battery_full), title: Text('Grid')),
+    new BottomNavigationBarItem(
+        icon: Icon(Icons.camera), title: Text('WebRTC'))
   ],
 );

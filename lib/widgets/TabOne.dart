@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'Menu.dart';
+
 var card = Card(
-  elevation: 16,
+  elevation: 8,
   margin: EdgeInsets.only(bottom: 16),
   child: Column(
     mainAxisSize: MainAxisSize.min,
@@ -9,7 +11,7 @@ var card = Card(
       const ListTile(
         contentPadding: EdgeInsets.only(top: 16, left: 16),
         leading: Icon(Icons.album),
-        title: Text('The Enchanted Nightingale'),
+        title: Text('The Enchanted Night '),
         subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
       ),
       ButtonBar(
@@ -43,8 +45,18 @@ var card = Card(
 class TabOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView(padding: EdgeInsets.all(10), children: <Widget>[
-      card, card, card, card, card, card, card
-    ]);
+    return Container(
+      child: new Stack(
+        alignment: Alignment.topLeft,
+        children: <Widget>[
+          list,
+//          GuillotineMenu(),
+        ],
+      ),
+    );
   }
 }
+
+var list = ListView(
+    padding: EdgeInsets.all(10),
+    children: <Widget>[card, card, card, card, card, card, card]);
